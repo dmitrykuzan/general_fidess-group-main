@@ -1,0 +1,103 @@
+.about {
+  padding-top: 13rem;
+  padding-bottom: 13rem;
+  color: var(--clr-default-100);
+  background-color: var(--clr-default-700);
+
+  @media (max-width: em(992)) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  @media (max-width: em(575)) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 4rem;
+    border-radius: 2rem;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      left: -30rem;
+      top: -2.7rem;
+      width: 14rem;
+      height: 11rem;
+      background-image: url(../img/about/decor-1.svg);
+      transform: rotate(-10deg);
+    }
+
+    &::after {
+      left: -16.5rem;
+      bottom: 0;
+      width: 16rem;
+      height: 8rem;
+      background-image: url(../img/about/decor-4.svg);
+    }
+
+    @media (max-width: em(1200)) {
+      display: none;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      right: -29rem;
+      top: -11rem;
+      width: 22rem;
+      height: 14rem;
+      background-image: url(../img/about/decor-2.svg);
+    }
+
+    &::after {
+      right: -14rem;
+      bottom: 5rem;
+      width: 12rem;
+      height: 6rem;
+      background-image: url(../img/about/decor-3.svg);
+    }
+
+    @media (max-width: em(1200)) {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+    font-family: "Gilroy";
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 2rem;
+
+    p:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}

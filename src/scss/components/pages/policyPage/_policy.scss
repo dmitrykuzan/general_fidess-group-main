@@ -1,0 +1,41 @@
+.policy {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  &__wrapper {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+    font-size: fluid-font(3.2rem, 2.6rem);
+    color: var(--clr-default-800);
+  }
+
+  &__text {
+    p {
+      font-size: 1.8rem;
+      line-height: 150%;
+      color: var(--clr-default-600);
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__list {
+    list-style: disc;
+    padding-left: 2rem;
+    font-size: 1.8rem;
+
+    li {
+      color: var(--clr-default-600);
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

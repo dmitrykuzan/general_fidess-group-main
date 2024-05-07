@@ -1,0 +1,49 @@
+<div class="modal modal--form">
+  <div class="modal__wrapper">
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close modal window"></button>
+
+      <form class="contact__info">
+        <h2 class="contact__title title">Contact</h2>
+
+        <ul class="contact__items">
+          <li class="contact__item contact__item--call">
+            <a href="tel:+442037697018"> +44 (203) 769-70-18</a>
+          </li>
+          <li class="contact__item contact__item--mail">
+            <a href="mailto:BIOLIFEEU@gmail.com">online@biolifeeu.store</a>
+          </li>
+        </ul>
+
+        <input
+          class="contact__input contact__name"
+          type="text"
+          name="name"
+          placeholder="Name"
+        />
+
+        <input
+          class="contact__input contact__mail"
+          type="email"
+          name="email"
+          placeholder="E-mail"
+        />
+
+        <textarea
+          class="contact__input contact__textarea"
+          name="text"
+          placeholder="Message"
+        ></textarea>
+
+        <p class="contact__form-status contact__form-status--success">
+          Thanks for the application! Our manager will contact you soon!
+        </p>
+        <p class="contact__form-status contact__form-status--error">
+          Something went wrong! Try again once.
+        </p>
+
+        <button class="contact__button main__button" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>

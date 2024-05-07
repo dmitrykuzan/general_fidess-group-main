@@ -1,0 +1,146 @@
+// <МИКСИНЫ>==================================================================
+@import "./settings/mixins";
+
+// </МИКСИНЫ>=================================================================
+
+// ФУНКЦИИ====================================================================
+@import "./settings/functions";
+
+// </ФУНКЦИИ>=================================================================
+
+// <Подключаем шрифты>========================================================
+@import "./settings/fonts";
+
+// </Подключаем шрифты>=======================================================
+
+// <ОБНУЛЕНИЕ>================================================================
+@import "./settings/normalize";
+
+// </ОБНУЛЕНИЕ>===============================================================
+
+// <ПЕРЕМЕННЫЕ>===============================================================
+$containerWidth: 124rem;
+
+:root {
+  // base
+  --font-family: "Lato", sans-serif;
+  --font-weight: 500;
+  --content-width: 117.2rem;
+  --container-offset: 1.5rem;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --transition: 0.3s;
+
+  // colors
+  --clr-default-100: #fff;
+  --clr-default-200: #fcfcfc;
+  --clr-default-300: #eaeaea;
+  --clr-default-400: #b6b5b5;
+  --clr-default-500: #b0aeba;
+  --clr-default-600: #777777;
+  --clr-default-700: #2d264b;
+  --clr-default-800: #333333;
+  --clr-default-900: #000;
+  --clr-primary-400: #3d861c;
+  --clr-primary-500: rgba(45, 38, 75, 0.5);
+  --clr-border-counter: #d2d7e7;
+  --clr-bg-counter: #f2f2ff;
+}
+
+// </ПЕРЕМЕННЫЕ>==============================================================
+
+// <ОБОЛОЧКИ>================================================================
+body {
+  font-size: 1.6rem;
+  color: var(--clr-default-700);
+
+  &.lock {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    -ms-touch-action: none;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  min-width: 32rem;
+  min-height: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    background-color: rgb(0 0 0 / 50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  &[data-overlay="true"]::before {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+}
+
+main {
+  flex-grow: 1;
+}
+
+// </ОБОЛОЧКИ>===============================================================
+
+// <СЕТКА>===================================================================
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--container-offset);
+  padding-left: var(--container-offset);
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+// Components - UI
+@import "./ui";
+
+// Components - UI
+
+// Components - UI
+@import "./components/ui/menu";
+@import "./components/ui/logo";
+@import "./components/ui/burger";
+
+// Components - UI
+
+// Components - Common
+@import "./components/common/header";
+@import "./components/common/footer";
+@import "./components/common/modal";
+
+// Components - Common
+
+// Components - Pages
+@import "./components/pages/indexPage/hero";
+@import "./components/pages/indexPage/product";
+@import "./components/pages/indexPage/about";
+@import "./components/pages/indexPage/contact";
+@import "./components/pages/catalogPage/catalog";
+@import "./components/pages/detailsPage/details";
+@import "./components/pages/policyPage/policy";
+@import "./components/pages/conditionsPage/conditions";
+
+// Components - Pages
+
+// </СЕТКА>==================================================================
+
+// <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>===========================
+
+// <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>===========================

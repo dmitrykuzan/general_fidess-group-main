@@ -1,0 +1,28 @@
+.related {
+  margin-bottom: 12rem;
+  padding-top: 7rem;
+
+  @media (max-width: em(992)) {
+    margin-bottom: 7rem;
+  }
+
+  @media (max-width: em(575)) {
+    margin-bottom: 5rem;
+  }
+
+  &__title {
+    margin-bottom: 5rem;
+  }
+
+  &__cards {
+    margin-bottom: 8rem;
+
+    @media (max-width: em(575)) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

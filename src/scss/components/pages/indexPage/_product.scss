@@ -1,0 +1,240 @@
+.product {
+  margin-bottom: 8rem;
+  padding-top: 7rem;
+
+  @media (max-width: em(575)) {
+    margin-bottom: 5rem;
+    padding-top: 3rem;
+  }
+
+  &__wrapper {
+    margin-bottom: 8.5rem;
+
+    @media (max-width: em(575)) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__category {
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: em(1200)) {
+      grid-gap: 2rem;
+    }
+
+    @media (max-width: em(992)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: em(575)) {
+      display: block;
+      grid-gap: initial;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 9rem;
+    min-height: 10rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: em(992)) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (max-width: em(575)) {
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    p {
+      font-weight: 800;
+      line-height: 118%;
+    }
+
+    &--1,
+    &--2,
+    &--3,
+    &--4 {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 2.5rem;
+        top: 50%;
+        width: 5rem;
+        height: 5rem;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--1 {
+      &::before {
+        background-image: url(../img/product/product-1.svg);
+        background-repeat: no-repeat;
+      }
+    }
+
+    &--2 {
+      &::before {
+        background-image: url(../img/product/product-2.svg);
+        background-repeat: no-repeat;
+      }
+    }
+
+    &--3 {
+      &::before {
+        background-image: url(../img/product/product-3.svg);
+        background-repeat: no-repeat;
+      }
+    }
+
+    &--4 {
+      &::before {
+        background-image: url(../img/product/product-4.svg);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 6.5rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -3.5rem;
+      top: 4rem;
+      width: 15rem;
+      height: 5.5rem;
+      background-image: url(../img/product/decor.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @media (max-width: em(1250)) {
+        display: none;
+      }
+    }
+
+    @media (max-width: em(575)) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5rem;
+
+    @media (max-width: em(992)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: em(576)) {
+      display: block;
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+    border: 2px solid #ebf0ff;
+    border-radius: 3rem;
+    transition: border var(--transition);
+
+    &:hover {
+      border: 2px solid var(--clr-primary-400);
+      transition: border var(--transition);
+      .product__card-title {
+        opacity: initial;
+        transition: opacity var(--transition);
+      }
+
+      .product__link {
+        color: var(--clr-default-700);
+        transition: color var(--transition);
+      }
+    }
+
+    @media (max-width: em(575)) {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 86%;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    padding-right: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+
+    @media (max-width: em(992)) {
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+      padding-left: 2rem;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 3rem;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: var(--clr-default-700);
+    opacity: 0.8;
+    transition: opacity var(--transition);
+
+    a {
+      color: initial;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__price {
+    padding-right: 1rem;
+    font-weight: 800;
+    font-size: 2.4rem;
+    color: var(--clr-default-700);
+  }
+
+  &__link {
+    font-weight: 500;
+    color: var(--clr-default-500);
+    transition: color var(--transition);
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
